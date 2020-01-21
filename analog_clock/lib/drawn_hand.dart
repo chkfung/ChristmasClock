@@ -77,13 +77,30 @@ class _HandPainter extends CustomPainter {
     // We want to start at the top, not at the x-axis, so add pi/2.
     final angle = angleRadians - math.pi / 2.0;
     final length = size.shortestSide * 0.5 * handSize;
-    final position = center + Offset(math.cos(angle), math.sin(angle)) * length;
     final linePaint = Paint()
       ..color = color
-      ..strokeWidth = lineWidth
-      ..strokeCap = StrokeCap.square;
+      ..style = PaintingStyle.fill
+      ..strokeWidth = 10
+      ..strokeCap = StrokeCap.butt;
+    final path = Path();
+    var startingY = center.dy;
+    var startingX = center.dx + handSize;
+    var baseYUnit = size.height / 50;
+    var baseXUnit = size.width / 15;
 
-    canvas.drawLine(center, position, linePaint);
+    path.moveTo(startingX, startingY);
+    path.lineTo(center.dx + handSize, baseYUnit * 15);
+    path.conicTo(center.dx + handSize + baseXUnit / 2, baseYUnit * 10,
+        center.dx + handSize + baseXUnit / 4, baseYUnit * 14, 0);
+    path.lineTo(center.dx + handSize, baseYUnit * 0);
+    path.lineTo(center.dx - handSize, baseYUnit * 2);
+
+    path.conicTo(center.dx - handSize - baseXUnit / 2, baseYUnit * 10,
+        center.dx - handSize - baseXUnit / 3, baseYUnit * 14, 0);
+    path.lineTo(center.dx - handSize, baseYUnit * 15);
+    path.close();
+
+    canvas.drawPath(path, linePaint);
   }
 
   @override
