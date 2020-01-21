@@ -1,15 +1,17 @@
-# Flutter Clock
+# Christmas Flutter Clock
 
-Welcome to Flutter Clock!
+Welcome to Christmas Flutter Clock!
 
-See [flutter.dev/clock](https://flutter.dev/clock) for how to get started, submission requirements, contest rules, and FAQs.
 
-See a [live demo](https://maryx.github.io/flutter_clock) with Flutter for Web!
+Example [Christmas Clock](analog_clock)
 
-Example [Analog Clock](analog_clock)
+<img src='screenshot/clock.jpg' width='350'>
 
-<img src='analog_clock/analog.gif' width='350'>
+License :
 
-Example [Digital Clock](digital_clock)
+- [Background Source](https://www.pexels.com/photo/green-wreath-1718031/) : [License](https://www.pexels.com/photo-license/)
 
-<img src='digital_clock/digital.gif' width='350'>
+Icon License: 
+- [Deer](https://www.iconfinder.com/icons/3856386/animals_christmas_deer_reindeer_winter_icon) 
+- [Gift](https://www.iconfinder.com/icons/1651926/bag_christmas_gift_present_santa_icon)
+- [Santa](https://www.iconfinder.com/icons/1651938/christmas_claus_santa_icon)
